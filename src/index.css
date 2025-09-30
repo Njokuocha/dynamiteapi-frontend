@@ -1,0 +1,115 @@
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.web-container{
+    max-width: 1300px;
+    margin-inline: auto;
+    padding-inline: 20px;
+}
+@media screen and (max-width: 640px){
+    .web-container{
+        padding-inline: 15px !important;
+        /* color: rgba(30, 143, 255, 0.36); */
+    }
+}
+.btn{
+    padding: 7px 17px;
+    border-radius: 4px;
+    /* background-color: dodgerblue; */
+    border: 2px solid transparent;
+    /* border-width: 2px; */
+    /* border-style: solid; */
+    outline: none;
+    cursor: pointer;
+    /* color: white; */
+}
+.btn-blue{
+    background-color: dodgerblue;
+    color: white;
+}
+.btn-white{
+    background-color: white;
+    color: dodgerblue;
+}
+.btn-white:hover{
+    background-color: transparent;
+    color: white;
+    border-color: white;
+    transition: all 0.3s linear;
+}
+.btn-white-outline{
+    background-color: transparent;
+    border-color: white;
+    color: white;
+}
+.btn-white-outline:hover{
+    background-color: white;
+    color: dodgerblue;
+    transition: all 0.3s linear;
+}
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.webcolor{
+    color: dodgerblue;
+}
+.webaqua{
+    color: rgb(45, 127, 127);
+}
+.webaquabg{
+    background-color: rgb(45, 127, 127);
+}
+.web-bg{
+    background-color: dodgerblue;
+}
+.web-gradient{
+    background: linear-gradient(to bottom right, rgb(0, 68, 136), dodgerblue);
+}
+.small-caps{
+    font-variant: small-caps;
+}
+
+.bd{
+    border: 4px solid red;
+}
+.bb{
+    border: 2px solid white;
+}
+
+@keyframes slideUp{
+    0%{
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(0);
+    }
+}
+.slideUp{
+    animation: slideUp 0.5s ease-in;
+}
+
+.scroll-design::-webkit-scrollbar{
+    width: 8px;
+    border-radius: 10px;
+    /* background-color: red; */
+}
+.scroll-design::-webkit-scrollbar-thumb{
+    background-color: #adadad;
+    border-radius: 10px;
+}
+.scroll-design::-webkit-scrollbar-track{
+    background-color: transparent;
+    border-radius: 10px;
+}
