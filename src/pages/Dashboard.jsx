@@ -239,7 +239,7 @@ return (
                     </div>
                 </div>
 
-                <div className="main bg-white rounded-md px-3 pt-3 pb-6 scroll-design max-[920px]:mt-3">
+                <div className="main bg-white h-full rounded-md px-3 pt-3 pb-6 scroll-design max-[920px]:mt-3">
                     {/* doc */}
                     {(params.get('route') === 'doc' || params.get('route') == null)
                     && <div className="flex flex-col gap-8">
