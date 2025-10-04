@@ -100,7 +100,7 @@ const getUser = async () => {
         const data = await response.json();
 
         if(data.message === 'Unauthenticated.' || !data || !localStorage.getItem('auth_token')){
-            localStorage.removeItem('auth_token');
+            // localStorage.removeItem('auth_token');
             navigate('/login', {replace: true});
             return;
         }
