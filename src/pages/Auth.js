@@ -4,7 +4,8 @@ import googleIcon from '../images/google.png';
 
 const Signup = () => {
 return ( 
-    <section className="signup h-screen w-full flex">
+    <section className="signup w-full flex items-center max-[850px]:px-2" 
+    style={{height: "calc(100vh - 80px)"}}>
         <section className="intro h-full grow web-gradient text-white center
         max-[850px]:!hidden">
             <div className="text-center">
@@ -13,7 +14,8 @@ return (
             </div>
         </section>
 
-        <section className="auth h-full mx-auto w-[500px] max-lg:w-[450px] bg-white px-4 py-4 overflow-auto center">
+        <section className="auth h-full mx-auto w-[500px] max-lg:w-[450px] bg-white px-4 py-4 overflow-auto 
+        center max-[850px]:h-fit max-[850px]:rounded-md">
             <div className="w-[400px] mx-auto flex flex-col gap-8">
                 <h1 className='text-3xl font-bold webcolor'>Create an account</h1>
                 <GoogleLoginButton />
@@ -31,7 +33,8 @@ return (
 }
 const Login = () => {
 return ( 
-    <section className="signup h-screen w-full flex">
+    <section className="login h-screen w-full flex items-center max-[850px]:px-2"
+    style={{height: "calc(100vh - 80px)"}}>
         <section className="intro h-full grow web-gradient text-white center
         max-[850px]:!hidden">
             <div className="text-center">
@@ -40,7 +43,8 @@ return (
             </div>
         </section>
 
-        <section className="auth h-full mx-auto w-[500px] max-lg:w-[450px] bg-white px-4 py-4 overflow-auto center">
+        <section className="auth h-full mx-auto w-[500px] max-lg:w-[450px] bg-white px-4 py-4 overflow-auto 
+        center max-[850px]:h-fit max-[850px]:rounded-md">
             <div className="w-[400px] mx-auto flex flex-col gap-8">
                 <h1 className='text-3xl font-bold webcolor text-center'>Log in</h1>
                 <GoogleLoginButton />
