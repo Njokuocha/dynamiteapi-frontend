@@ -1,4 +1,6 @@
-
+:root{
+    --sidebarAnimate: sidebarSlide 0.2s linear;
+}
 body {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
@@ -21,17 +23,21 @@ body {
 .btn{
     padding: 7px 17px;
     border-radius: 4px;
-    /* background-color: dodgerblue; */
     border: 2px solid transparent;
-    /* border-width: 2px; */
-    /* border-style: solid; */
     outline: none;
     cursor: pointer;
-    /* color: white; */
+    transition: all 0.3s linear;
+}
+.btn-black{
+    background-color: black;
+    color: white;
 }
 .btn-blue{
     background-color: dodgerblue;
     color: white;
+}
+.btn-blue:hover{
+    background-color: rgb(4, 112, 220);
 }
 .btn-white{
     background-color: white;
@@ -41,7 +47,6 @@ body {
     background-color: transparent;
     color: white;
     border-color: white;
-    transition: all 0.3s linear;
 }
 .btn-white-outline{
     background-color: transparent;
@@ -51,7 +56,6 @@ body {
 .btn-white-outline:hover{
     background-color: white;
     color: dodgerblue;
-    transition: all 0.3s linear;
 }
 .center{
     display: flex;
@@ -76,6 +80,17 @@ body {
 .small-caps{
     font-variant: small-caps;
 }
+.input{
+    height: 40px;
+    width: initial;
+    border: 1px solid rgba(0, 0, 0, 0.226);
+    outline: none;
+    padding: 5px 11px;
+    border-radius: 5px;
+    font-size: 15px;
+    opacity: 0.8;
+    width: 200px;
+}
 
 .bd{
     border: 4px solid red;
@@ -97,7 +112,48 @@ body {
     }
 }
 .slideUp{
-    animation: slideUp 0.5s ease-in;
+    animation: slideUp 0.3s ease-in;
+}
+
+@keyframes fadeIn{
+    0%{
+        transform: scale(0.9);
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(1);
+    }
+}
+.fadeIn{
+    animation: fadeIn 0.3s ease-in;
+}
+@keyframes sidebarSlide{
+    0%{
+        transform: translateX(-100%);
+        opacity: 0;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateX(0);
+    }
+}
+.sidebarSlide{
+    animation: sidebarSlide 0.3s linear;
+}
+
+.noscroll-design::-webkit-scrollbar{
+    width: 0;
+}
+.noscroll-design::-webkit-scrollbar-thumb{
+    background-color: transparent;
+}
+.noscroll-design::-webkit-scrollbar-track{
+    background-color: transparent;
 }
 
 .scroll-design::-webkit-scrollbar{
