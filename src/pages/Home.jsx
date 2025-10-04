@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import menuImg from '../images/menu.png';
-// import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import React, { useEffect, useState } from "react";
 
 import logo from '../images/logo.png';
@@ -8,7 +8,7 @@ import trademark from '../images/trademark.png';
 
 const Header = () => {
 const [checkUser, setCheckUser] = useState(false);
-// const navigate = useNavigate();
+const navigate = useNavigate();
 
 useEffect(() => {
   isUserAuth();
@@ -54,12 +54,20 @@ const logout = async () => {
         
         if(data.status === 'success'){
             localStorage.removeItem('auth_token');
-            // navigate('/login', {replace: true});
+            navigate('/login', {replace: true});
             setCheckUser(false);
+            closeMobileNav();
         }
     } catch(err){
         console.log(err.message);
     }
+}
+
+const closeMobileNav = () => {
+  document.querySelector('#mobile-dpn').classList.add('hidden')
+}
+const toggleMobileNav = () => {
+  document.querySelector('#mobile-dpn').classList.toggle('hidden')
 }
 
 return(
@@ -101,22 +109,22 @@ return(
 
       {/* Menu Icon */}
       <div className="menu min-sm:hidden mt-[5px]"
-      onClick={() => document.querySelector('#mobile-dpn').classList.toggle('hidden')}>
+      onClick={() => toggleMobileNav()}>
         <img src={menuImg} width="30px" alt="menu icon"
         className='mt-2 cursor-pointer' />
       </div>
 
-      <div id='mobile-dpn' className="mobile-dpn w-[300px] max-[320px]:!w-full p-1 rounded-md web-gradient shadow-lg
+      <div id='mobile-dpn' className="mobile-dpn w-[300px] max-[320px]:!w-full py-1 px-2 rounded-md web-gradient shadow-lg
       absolute top-[100%] left-[50%] translate-x-[-50%] slideUp hidden min-sm:!hidden"
       >
         <ul className='flex flex-col items-s'>
-          <Link to="/dashboard?route=doc"><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Doc</li></Link>
-          <Link to="/privacy"><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Privacy</li></Link>
-          <Link to="/contact"><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Contact Us</li></Link>
-          {checkUser && <Link to="/dashboard"><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Dashboard</li></Link>}
+          <Link to="/dashboard?route=doc" onClick={closeMobileNav}><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Doc</li></Link>
+          <Link to="/privacy" onClick={closeMobileNav}><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Privacy</li></Link>
+          <Link to="/contact" onClick={closeMobileNav}><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Contact Us</li></Link>
+          {checkUser && <Link to="/dashboard" onClick={closeMobileNav}><li className='py-1 px-2 hover:bg-gray-800 cursor-pointer rounded-sm'>Dashboard</li></Link>}
           {!checkUser && <React.Fragment>
-            <Link to="/signup" className="btn btn-white-outline my-2 !rounded-full w-full text-center">Signup</Link>
-            <Link to="/login" className="btn btn-white !rounded-full w-full text-center mb-2">Login</Link>
+            <Link to="/signup" className="btn btn-white-outline my-2 !rounded-full w-full text-center" onClick={closeMobileNav}>Signup</Link>
+            <Link to="/login" className="btn btn-white !rounded-full w-full text-center mb-2" onClick={closeMobileNav}>Login</Link>
           </React.Fragment>}
           {checkUser && <button className="btn btn-white !rounded-full w-full text-center my-2" onClick={logout}>Logout</button>}
         </ul>
