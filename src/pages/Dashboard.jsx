@@ -104,11 +104,7 @@ const getUser = async () => {
             navigate('/login', {replace: true});
             return;
         }
-        // console.log({
-        //     data,
-        //     newsletter,
-        //     upgrades
-        // });
+        // console.log(data);
         setUser(data);
         setApiKey(data.data.apiKey);
         setRequestFig(data.data.rfig);
@@ -142,7 +138,7 @@ const getUser = async () => {
             setUpgradeListDisplay(purchasedPlan);
             setUpgradePlans(plans);
         }
-        
+        // console.log(data.newsletter.status);
         if(data?.newsletter?.status === 'active'){
             setNewsSubStatus(true);
             // console.log('Subscribed');
